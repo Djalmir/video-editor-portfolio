@@ -1,0 +1,199 @@
+:root {
+	/*Dark theme*/
+	--dark-bg1: #1b1b1b;
+	--dark-bg1-transparent: #1b1b1b99;
+	--dark-bg2: #242424;
+	--dark-bg2-transparent: #24242499;
+	--dark-bg3: #303030;
+	--dark-bg3-transparent: #30303099;
+	--dark-bg4: #6b6b6b;
+	--dark-bg4-transparent: #6b6b6b99;
+
+	--dark-font1: #ababab;
+	--dark-font2: #e7e7e7;
+
+	--dark-box-shadow: 1px 1px 2px #000000d0;
+	--hover-dark-box-shadow: 1px 1px 4px #000000d0;
+	--inset-dark-box-shadow: inset 1px 1px 2px #000000d0;
+
+	/*Light theme*/
+	--light-bg1: #bdbdbd;
+	--light-bg1-transparent: #bdbdbd99;
+	--light-bg2: #dddddd;
+	--light-bg2-transparent: #dddddd99;
+	--light-bg3: #ededed;
+	--light-bg3-transparent: #ededed99;
+	--light-bg4: #fefefe;
+	--light-bg4-transparent: #fefefe99;
+
+	--light-font1: #3f3f3f;
+	--light-font2: #616161;
+
+	--light-box-shadow: 1px 1px 2px #00000080;
+	--hover-light-box-shadow: 1px 1px 4px #00000080;
+	--inset-light-box-shadow: inset 1px 1px 2px #00000080;
+
+	/*Colors*/
+	--primary: #6500b8;
+	--primary-transparent: #6500b823;
+	--primary-light: #862ad1;
+
+	--secondary: #4e4e57;
+	--secondary-light: #a5a5b3;
+	--secondary-transparent: #4e4e5755;
+
+	--danger: #be0000;
+	--danger-light: #ff5757;
+
+	--success: #00921d;
+	--success-light: #25e94c;
+
+	--scroll-track-bg: transparent;
+	--scroll-thumb-bg: #393939;
+	--light-scroll-thumb-bg: #999;
+	--scroll-thumb-hover-bg: #454545;
+	--light-scroll-thumb-hover-bg: #fff;
+	--scroll-thumb-active-bg: #303030;
+	--light-scroll-thumb-active-bg: #777;
+
+	/*General Settings*/
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+
+	color-scheme: light dark;
+	color: var(--dark-font1);
+	background: linear-gradient(145deg, var(--dark-bg2), var(--dark-bg1));
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	--template-columns: repeat(10, 1fr);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+body {
+	min-height: 100vh;
+	background: linear-gradient(145deg, var(--dark-bg2), var(--dark-bg1));
+	position: relative;
+}
+
+.light-theme body {
+	background: linear-gradient(145deg, var(--light-bg2), var(--light-bg1));
+}
+
+::-webkit-scrollbar {
+	background: transparent;
+	width: 7px;
+	height: 3px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: var(--scroll-track-bg);
+
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scroll-thumb-bg);
+	border-radius: 7px;
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+	background: var(--light-scroll-thumb-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--scroll-thumb-hover-bg);
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+	background: var(--light-scroll-thumb-hover-bg);
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: var(--scroll-thumb-active-bg);
+	box-shadow: inset 1px 1px 1px var(--dark-bg1);
+}
+
+.light-theme ::-webkit-scrollbar-thumb:active {
+	background: var(--light-scroll-thumb-active-bg);
+}
+
+::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+::selection {
+	background: var(--light-bg2);
+	color: var(--primary);
+}
+
+.light-theme ::selection {
+	background: var(--dark-bg2);
+	color: var(--primary-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color: var(--dark-font1);
+		background: linear-gradient(145deg, var(--dark-bg2), var(--dark-bg1));
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: var(--light-font1);
+		background: linear-gradient(145deg, var(--light-bg2), var(--light-bg1));
+	}
+}
+
+.dark-theme {
+	color: var(--dark-font1);
+	background: linear-gradient(145deg, var(--dark-bg2), var(--dark-bg1));
+}
+
+.light-theme {
+	color: var(--light-font1) !important;
+	background: linear-gradient(145deg, var(--light-bg2), var(--light-bg1));
+}
+
+a {
+	text-decoration: none;
+	color: var(--primary);
+}
+
+a:hover {
+	filter: brightness(1.2);
+}
+
+a:active {
+	filter: brightness(.8);
+}
+
+a:visited {
+	color: var(--primary-light);
+}
+
+.loader {
+	animation: loader 1.5s linear infinite;
+}
+
+@keyframes loader {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

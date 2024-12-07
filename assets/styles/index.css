@@ -1,0 +1,17 @@
+body {
+  overflow-x: hidden;
+}
+
+@keyframes appear-from-left {
+  0% {
+    transform: translateX(-225vw) translateY(-100vh) scale(2.3);
+    /* filter: drop-shadow(50px 50px 5px var(--dark-bg1-transparent)); */
+  }
+  75% {
+    transform: translateX(0) translateY(-10vh);
+  }
+  100% {
+    transform: translateX(0);
+    /* filter: drop-shadow(5px 5px 5px var(--dark-bg1-transparent)); */
+  }
+}
